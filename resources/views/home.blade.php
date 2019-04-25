@@ -169,7 +169,7 @@
         <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
         <h3>click for confirm</h3>
         <center><td><a class="btn btn-primary" href="{{ action('UserController@firstAddBooking')}}" >ok</a></td></center>
-        <p>Some text. Some text. Some text.</p>
+  
       </div>
     </div>
   </div>

@@ -12,12 +12,9 @@
                 <div class="col-md-4">
             <select  id="users" class="form-control{{ $errors->has('users') ? ' is-invalid' : '' }}" name="users"  required autofocus>
             @for ($i = 0; $i < count($users); $i++)
-            @if($users[$i]->project_id == null && $users[$i]->type == null )
-            
+                @if($users[$i]->project_id == null && $users[$i]->type == null )
                  <option value='{{$users[$i]->id}}'>{{$users[$i]->id}} {{$users[$i]->name}}</option>
-            
-              @endif     
-                   
+              @endif   
             @endfor
             </select>
 

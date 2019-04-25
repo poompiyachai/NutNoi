@@ -4,7 +4,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"><h1>ข้อมูลโปรเจคของ{{$users->name}}</h1></div>
+                <div class="card-header">
+                    <div class="alert alert-primary" role="alert">
+                        <h1>ข้อมูลโปรเจคของ {{$users->name}}</h1>
+                    </div>
+                </div>
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -14,7 +18,7 @@
                     <table class="table table-bordered table-striped ">
                         <tr> 
                         <th>Project ID</th>
-                        <th>Name Project</th>
+                        <th>Name     Project</th>
                         <tr>
                         <td>{{$users->project_id}}</td>
                         <td>{{$project->project_name}}</td>
@@ -22,9 +26,13 @@
                     </table>  
                     @if ( $users->booking == NULL && $waitTable->status_confirm == NULL)
                         @if ($waitTable->status_submit == NULL )
-                            <a class="btn btn-danger"  href="#" >+++++++++++++++++++++++++++++ ตอนนี้คุณยังไม่ได้ Submit +++++++++++++++++++++++++++++</a>
+                            <div class="alert alert-danger" role="alert">
+                                ตอนนี้คุณยังไม่ได้ Submit
+                            </div>
                         @else
-                            <a class="btn btn-success" href="#" >+++++++++++++ ตอนนี้คุณได้ทำการ Submit เรียบร้อยเเล้ว กรุณารอการยืนยันจาก Admin +++++++++++++</a>
+                            <div class="alert alert-success" role="alert">
+                                ตอนนี้คุณได้ทำการ Submit เรียบร้อยเเล้ว กรุณารอการยืนยันจาก Admin
+                            </div>
                         @endif
                         <table class="table table-bordered table-striped">
                             <td>Order</td>
@@ -146,9 +154,9 @@
     <div class="w3-modal-content">
       <div class="w3-container">
         <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-        <h3>click for confirm</h3>
-        <center><td><a class="btn btn-primary" href="{{ action('UserController@submitted',$users->project_id)}}"  >ok</a></td></center>
-        <p>Some text. Some text. Some text.</p>
+        <h3>click ok for add</h3>
+        <center><h1><td><a class="btn btn-primary" href="{{ action('UserController@submitted',$users->project_id)}}"  >ok</a></td><h1></center>
+     
       </div>
     </div>
   </div>
